@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.mechanisms;
 
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.AnalogInput;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -7,8 +8,7 @@ import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@TeleOp
-public class TestBench {
+public class TestBench{
 
     //private DigitalChannel touchSensor;
     private DcMotor motor;
@@ -27,5 +27,4 @@ public class TestBench {
     public void setMotorSpeed(double speed){
         motor.setPower(speed);
     }
-
 }
