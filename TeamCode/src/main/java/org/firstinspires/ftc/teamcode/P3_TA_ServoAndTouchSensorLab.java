@@ -4,9 +4,10 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.TouchSensor;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp(name = "ServoAndTouchLab", group = "Program")
-public class ServoAndTouchSensorLab extends LinearOpMode {
+public class P3_TA_ServoAndTouchSensorLab extends LinearOpMode {
 
     private Servo labServo;
     private TouchSensor labTouchSensor;
@@ -16,19 +17,26 @@ public class ServoAndTouchSensorLab extends LinearOpMode {
         boolean run = true;
         labServo = hardwareMap.get(Servo.class, "P3_TA_servo");
         labTouchSensor = hardwareMap.get(TouchSensor.class, "P3_TA_touch_sensor");
-
+        ElapsedTime elapsedTime = new ElapsedTime();
+        double start = elapsedTime.time();
         waitForStart();
 
         while (opModeIsActive()){
             if(labTouchSensor.isPressed()){
                 if(run){
                     labServo.setPosition(-1);
-                    sleep(1000);
+                    double num = elapsedTime.time();
+                    while(elapsedTime.time()-num<1){
+
+                    }
                     run = false;
                 }
                 else{
                     labServo.setPosition(1);
-                    sleep(1000);
+                    double num = elapsedTime.time();
+                    while(elapsedTime.time()-num<1){
+
+                    }
                     run = true;
                 }
             }
